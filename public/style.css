@@ -1,0 +1,16 @@
+* { border:0px solid red;}
+
+body { font: 13px Helvetica, Arial; background-color:#616161; text-align: center;}
+#container {     display: flex;              /* establish flex container */
+    flex-direction: column;     /* stack flex items vertically */
+    justify-content: center;    /* center items vertically, in this case */
+    align-items: center;    }
+.pageText { height:1.5em; font: 30px Impact; color: #682E19;}
+#textBox {font:13px Courier; background-color:#FFF; border-radius:25px; border:3px solid #000; height:calc(85vh-1.5em); width:70vw; margin-left: auto; margin-right: auto;}
+#messageBox{overflow-y:scroll;padding-top:10px;height: calc(85vh - 5em - 2px);padding-left:20px;padding-right:10px;margin-right:10px;margin-top:10px;}
+#divideLine{height:2px;width:100%;background-color:#000;}
+#chatBox {padding-left:10px;padding-right:10px;height:5em;position:relative; display:flex; flex-direction:row;}
+#chatBox textarea {height:100%; width:100%;border:0px;resize:none;overflow:hidden;margin:0px;padding:0px;}
+#chatBox form {height:80%; width:95%;margin-top:0.8em;overflow:hidden;margin-left:2px;}
+#chevron {top:0;margin-top:0.8em;font-size:13px;}
+.messageContainer {display:flex;flex-direction:row;}

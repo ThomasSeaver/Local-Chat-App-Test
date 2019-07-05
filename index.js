@@ -1,11 +1,14 @@
-var app = require('express')();
+var express = require('express');
+app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var nick = 0;
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
+
+app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(socket){
     var socketNick = nick;
