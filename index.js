@@ -4,21 +4,21 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var nick = 0;
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/public/index.html');
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/public/index2.html');
 });
 
 app.use(express.static(__dirname + '/public'));
 
-io.on('connection', function(socket){
+io.on('connection', function(socket) {
     var socketNick = nick;
     nick++;
     var socketColor = "#000000";
     console.log('a user connected');
-    socket.on('chat message', function(msg){
+    socket.on('chat message', function(msg) {
         console.log(socketNick + ': ' + msg);
     });
-    socket.on('chat message', function(msg){
+    socket.on('chat message', function(msg) {
         var emission = {
             message: msg,
             nameColor: socketColor,
@@ -55,11 +55,11 @@ io.on('connection', function(socket){
             }
         }
     });
-    socket.on('disconnect', function(){
+    socket.on('disconnect', function() {
         console.log('user disconnected');
     });
 });
 
-http.listen(3000, function(){
+http.listen(3000, function() {
     console.log('listening on *:3000');
 });
